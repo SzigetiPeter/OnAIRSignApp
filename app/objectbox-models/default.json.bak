@@ -1,0 +1,77 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:5953017013644141614",
+      "lastPropertyId": "5:7715347473798288259",
+      "name": "TimeEntry",
+      "properties": [
+        {
+          "id": "1:997940333810816167",
+          "name": "id"
+        },
+        {
+          "id": "3:4732454393378960590",
+          "name": "endTime"
+        },
+        {
+          "id": "4:6523721888699128740",
+          "name": "duration"
+        },
+        {
+          "id": "5:7715347473798288259",
+          "name": "startTime"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:2206061911109879157",
+      "lastPropertyId": "5:8664082792544815520",
+      "name": "User",
+      "properties": [
+        {
+          "id": "1:1015632711977752929",
+          "name": "id"
+        },
+        {
+          "id": "2:5028920774203053368",
+          "name": "userName"
+        },
+        {
+          "id": "3:1666720213759726016",
+          "name": "textColor"
+        },
+        {
+          "id": "4:1369277368367202309",
+          "name": "password"
+        },
+        {
+          "id": "5:8664082792544815520",
+          "name": "email"
+        }
+      ],
+      "relations": [
+        {
+          "id": "1:2433435424459086556",
+          "name": "timeEntryList"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "2:2206061911109879157",
+  "lastIndexId": "0:0",
+  "lastRelationId": "1:2433435424459086556",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    7104850959901224271
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

@@ -1,0 +1,41 @@
+<script type="text/javascript" src="js/loader.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["timeline"]});
+  google.charts.setOnLoadCallback(getChartData);
+  function drawChart(data) {
+
+    var container = document.getElementById('example5.1');
+    var chart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Room' });
+    dataTable.addColumn({ type: 'string', id: 'Name' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+    dataTable.addRows(data);
+
+    var options = {
+      timeline: { colorByRowLabel: true }
+    };
+
+    chart.draw(dataTable, options);
+  }
+
+  function getChartData(){
+      $.get( "http://" + window.location.host + "/timeslot", function( data ) {
+            console.log(data);
+            for(i in data ) {
+                data[i][2] = new Date(data[i][2]);
+                data[i][3] = new Date(data[i][3]);
+            }
+            drawChart(data)
+      });
+  }
+
+
+
+
+</script>
+
+<div id="example5.1" style="height: 100%;"></div>
